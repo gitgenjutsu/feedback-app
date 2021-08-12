@@ -1,0 +1,587 @@
+@import "color";
+/* ================ Google Fonts ================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
+
+
+/* ================ Base ============================== */
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* scrollbar-width: none; */
+}
+// body{
+//     background-color:$bg-black-50;
+// }
+.inner_shadow {
+    box-shadow: $inner-shadow;
+}
+
+.outer_shadow {
+    box-shadow: $outer-shadow;
+}
+.hover_in_shadow {
+    position: relative;
+    z-index: 100;
+}
+
+.hover_in_shadow:hover {
+    box-shadow: $outer-shadow-0;
+}
+
+.hover_in_shadow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease;
+    z-index: -1;
+}
+
+.hover_in_shadow:hover::after {
+    box-shadow: $inner-shadow;
+    cursor: pointer;
+}
+
+//logo
+.headerLogo{
+    width: 130px;
+}
+//header
+.navheader{
+    background-color: #eff0f4;
+    padding-top: 5px;
+    margin-bottom: 0;
+}
+.heading{
+    color: #151515;
+}
+.body-bg{
+    background-color: #eff0f4;
+margin-top: -23px;
+padding-top: 20px;
+}
+.moreinfo-div{
+    background-color: #eff0f4;
+    padding-top: 10px;
+    // padding-bottom:100px;
+    height:88vh;
+    .moreDetails-div{
+        background-color: #fdfdfd;
+        box-shadow: 5px 5px 26px rgba(34, 34, 34, 0.46);
+        h4{
+            text-decoration: underline;
+            line-height: 10px;
+        }
+    }
+}
+.feedback-div{
+        background-color: #eff0f4;
+        padding-bottom: 5px;
+    .form-container{
+        background-color: #fdfdfd;
+    }
+}
+.thankyou-div{
+    background-color: #eff0f4;
+    height:88vh;
+    padding-top: 10px;
+}
+
+
+//form
+.main{
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:60px;
+    margin:20px 0;
+    .form_div{
+        width: 50%;
+        height:auto;
+        padding:15px;
+        box-shadow: 5px 5px 26px rgba(34, 34, 34, 0.46);
+        z-index:100;
+        background-color:#fdfdfd;
+        .form-group{
+            margin: 30px 0;
+        }
+        .btn-grp{
+                display: flex;
+                justify-content:space-around;
+                .warning{
+                    background-color: rgba(204, 204, 10, 0.822);
+                }
+            }
+    }
+    .vector{
+        width: 50%;
+    }
+}
+
+//feedback
+.form-container{
+    box-shadow: 0px 12px 10px rgba(34, 34, 34, 0.336);
+    height:auto;
+    padding:7px 0 20px 13px;
+    margin-bottom: 20px;
+}
+.form-div{
+    margin:10px 0;
+    .label{
+        font-size:1.6rem;
+        color: $text-black-900;
+        margin-bottom: 12px;
+    }
+    .instructor-para{
+        margin-bottom: 10px;
+        opacity: .7;
+    }
+    .form-group{
+        display: grid;
+        grid-template-columns: 320px 320px 320px;
+        .MuiFormControlLabel-label{
+            color:$text-black-700;
+        }
+    }
+}
+//more details
+.moreDetails-div{
+    width: 100%;   
+    height: auto;
+    padding:15px;
+        .questions{
+            width:100%;
+            padding:30px;
+        .radioGrp{
+            flex-direction: row;
+        }
+        ol{
+            column-count: 2;
+        }
+        ol li{
+            line-height:4rem;            
+        }
+    }
+    
+}
+//thankyou
+.text-warning{
+    color: rgb(209, 12, 28);
+}
+.feedback-link{
+    margin-top:10rem;
+    font-size: 1.7rem;
+    cursor:pointer;
+}
+
+//Admin Panel
+
+//header
+.header{
+    position: fixed;
+    z-index: 100;
+    // padding-left: 235px;
+    width: 100%;    
+    background-color: #ffffff;
+    box-shadow: 5px 3px 3px #ccc;
+    .nav-head{
+        box-shadow: 0 2px 2px #ccc;
+        height:5.7rem;
+    }
+}
+
+// sidemenu
+.side-menu.active{
+    position: fixed;
+    z-index: 101;
+    width:80px;
+    transition: .7s;
+    .headerLogo{
+        margin-left: 40px;
+    }
+    .user-panel{
+        .user-info{
+            display: none;
+        }
+    }
+}
+.side-menu{
+    position: fixed;
+    z-index: 101;
+    transition: .7s;
+    display: flex;
+    flex-direction: column;
+    // position: absolute;
+    left: 0;
+    width: 235px;
+    height: 100%;
+    background-color: #253053;
+    .logo-div {
+    width: 100%;
+    height: 6rem;
+    background-color: #fdfdfd;
+    text-align: center;
+    padding-top: 10px;
+}
+.user-panel{
+    width:100%;
+    height:8rem;
+    color: #fff;
+    display:flex;
+    justify-content:space-around;
+    align-items: center;
+    padding: 12px;
+    .user-img{
+        // width:5rem;
+        // height:5rem;
+        text-align:center;
+        // font-size:2rem;
+        // padding:13px 0;
+    }
+    
+}
+.filter-box.active{
+    width: 80px;
+    label{
+        transition: .7s;
+        display: none;
+    }
+}
+.filter-box{
+    width:100%;
+    height:max-content;
+    background-color: #eaeef3;
+    padding:15px;
+    label{
+        transition: .7s;
+        font-size:1rem;
+        padding-left: 5px;
+        color:#253053;
+    }
+    ul li{
+        margin:10px 0;
+        white-space: nowrap;
+        &:hover,label:hover{
+            background-color:#cecece;
+            cursor: pointer;
+            transition: .7s;
+        }
+    }
+}
+}
+
+.table-div.active{
+    // padding-left: 85px;
+    transition:.7s;
+}
+.table-div{
+    transition:.7s;
+    padding:30px;
+    padding-top:120px;
+    background-color: #eaeef3;
+    height: max-content;
+    min-height: 100vh;
+    .MuiTypography-h6{
+        font-size:1.5rem;
+        font-weight: bold;
+    }
+}
+
+//errors
+.error-div{
+    display: flex;
+    justify-content: space-between;
+    .error{
+    color: #e70c0c;
+    font-size: .7rem;
+    }
+}
+
+//feddback data
+.data-div{
+    background-color: #f1e5e5d8;
+    padding-left:25px;
+    .feedback-data,.more-details{
+        display: grid;
+    grid-template-columns: 400px 400px 400px;
+    padding:10px;
+    div{
+        display: flex;
+        flex-direction:column;
+        h5{
+            font-size: 20px;
+            background-color: #051c69ce;
+            padding: 10px;
+            border-left: 1px solid rgb(190, 190, 190);
+            color: #fff;
+        }
+    }
+    }
+    
+}
+
+//admin info
+.admin-info{
+    display: flex;
+    align-items: center;
+    h5{
+        font-size: 17px;
+        margin-right: 8px;
+    }
+}
+
+/* ........................login............... */
+.logform{
+  min-width: 400px;
+  min-height: 350px;
+  background-color: rgb(19, 104, 201);
+  border-radius: 10px;
+  padding: 20px;
+}
+.logtxt{
+  color: #fff;
+}
+.Form placeholder{
+  color: #fff;
+}
+.logform h3{
+  text-align: center;
+  color: #fff;
+  font-weight: medium;
+  padding: 10px 10px 0 0;
+}
+.logform Button{
+ margin-left: 40%;
+ color: #222;
+ background-color: #fff;
+ margin-top: 20px;
+ margin-bottom: 20px;
+}
+.logform Button:hover{
+  color: #222;
+  background-color: #fff;
+}
+.logform img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-left: 35%;
+  object-fit: cover;
+}
+.logform img{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.forget{
+  text-align: center;
+}
+.forget a:hover{
+  text-decoration: none;
+  border-bottom: none;
+}
+.forget a{
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  font-size: 12px;
+}
+
+/* ........................Youtue................. */
+
+.log-2{
+  min-width: 400px;
+  min-height: 350px;
+  background-color: rgb(19, 104, 201);
+  border-radius: 10px;
+  padding: 20px; 
+}
+.log-2{
+  color: #fff;
+}
+.Form placeholder{
+  color: #fff;
+}
+.log-2 h5{
+  text-align: center;
+  color: #fff;
+  font-weight: lighter;
+  padding: 10px 10px 0 0;
+}
+.log-2 Button{
+ margin-left: 42%;
+ color: #222;
+ background-color: #fff;
+ margin-top: 20px;
+ margin-bottom: 20px;
+}
+.logform Button:hover{
+  color: #222;
+  background-color: #fff;
+}
+.log-2 img{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-left: 35%;
+  object-fit: cover;
+}
+.log-2 img{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.log-btn{
+  text-align: center;
+  padding-bottom: 20px;
+}
+.log-btn a:hover{
+  text-decoration: none;
+  border-bottom: none;
+}
+.log-btn a{
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  font-size: 12px;
+}
+
+.error{
+  color:red;
+}
+
+// Responsive code
+
+@media (min-width: 320px) and (max-width:768px){
+     //student details
+    .main {
+        justify-content:center;
+    .form_div{
+        width: 100%;
+    }
+    }
+    .vector {
+        display: none;
+    }
+    .body-bg{
+        margin-bottom: -20px;
+    }
+    //feedback
+    .form-container{
+        width:90%;
+        margin: 0 auto;
+        .heading{
+            font-size: 1.4rem;
+        }
+    }
+    .form-div{
+    margin:7px 0;
+    .label{
+        font-size:1.2rem;
+    }
+    .instructor-para{
+        margin-bottom: 8px;
+    }
+    .form-group{
+        display:grid;
+        grid-template-columns: 100%;
+    }
+}
+//more details
+.moreinfo-div{
+    height:120vh;
+    .moreDetails-div{
+        .heading{
+            font-size:1.3rem;
+        }
+        .questions{
+        ol{
+            column-count: 1;
+        }
+        ol li{
+            line-height:2rem;            
+        }
+    }
+    
+}
+}
+
+}
+@media (min-width: 768px) and (max-width:881){
+    //student details
+    .vector {
+        width:150px;
+        img{
+            width:auto;
+        }
+    }
+    .body-bg{
+        margin-bottom: -20px;
+    }
+    //feedback
+    .form-container{
+        width:80%;
+        margin: 0 auto;
+        .heading{
+            font-size: 1.6rem;
+        }
+    }
+    .form-div{
+    margin:7px 0;
+    .label{
+        font-size:1.2rem;
+    }
+    .instructor-para{
+        margin-bottom: 8px;
+    }
+    .form-group{
+        grid-template-columns: 320px 320px;
+    }
+}
+}
+@media (min-width: 882px) and (max-width:958px){
+    .vector img {
+        width:380px;
+    }
+    .body-bg{
+        margin-bottom: -20px;
+    }
+    //feedback
+    .form-container{
+        width: 80%;
+        margin: 0 auto;
+        padding: 15px 20px;
+        .heading{
+            font-size: 1.6rem;
+        }
+    }
+    .form-div{
+    margin:7px 0;
+    .label{
+        font-size:1.2rem;
+    }
+    .instructor-para{
+        margin-bottom: 8px;
+    }
+    .form-group{
+        grid-template-columns: 320px 320px 320px;
+    }
+}
+}
+@media (min-width: 959px) and (max-width:1200px){
+    .vector img {
+        width:480px;
+    }
+    .body-bg{
+        margin-bottom: -20px;
+    }
+}
